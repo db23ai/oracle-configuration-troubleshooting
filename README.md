@@ -46,7 +46,6 @@ SQL> select database_role from v$database;
 
 DATABASE_ROLE
 
-----------------
 PHYSICAL STANDBY
 
 SQL> alter database recover managed standby database finish;
@@ -88,10 +87,9 @@ SQL> select database_role from v$database;
 
 DATABASE_ROLE
 
-----------------
 PRIMARY
 
-SQL>
+
 
 
 
