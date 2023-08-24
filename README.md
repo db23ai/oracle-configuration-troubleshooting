@@ -11,6 +11,7 @@ SQL> select database_role from v$database;
 -- Conver standby to standalong
 
 SQL> alter database recover managed standby database finish;
+
 SQL> alter database commit to switchover to primary with session shutdown;
 
 -- Shutdown Database
