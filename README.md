@@ -57,22 +57,28 @@ SQL> alter database commit to switchover to primary with session shutdown;
 Database altered.
 
 SQL> shutdown immediate;
+
 ORA-01109: database not open
-
-
 Database dismounted.
 ORACLE instance shut down.
 
 
 SQL> startup
+
 ORACLE instance started.
 
 Total System Global Area 4288512536 bytes
+
 Fixed Size                  9171480 bytes
+
 Variable Size             939524096 bytes
+
 Database Buffers         3305111552 bytes
+
 Redo Buffers               34705408 bytes
+
 Database mounted.
+
 Database opened.
 
 SQL> select database_role from v$database;
