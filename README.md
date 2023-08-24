@@ -85,8 +85,8 @@ Database opened.
 
 SQL> select database_role from v$database;
 
-DATABASE_ROLE
-
+DATABASE_ROLE                                                                                                          
+                                                                                                                       
 PRIMARY
 
 
