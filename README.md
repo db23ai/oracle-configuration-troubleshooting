@@ -26,7 +26,7 @@ SQL> startup
 
 SQL> select database_role from v$database;
 
-============================================================================================================================
+
 
 # Output of above command :
 
