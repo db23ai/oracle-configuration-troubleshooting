@@ -26,8 +26,9 @@ SQL> startup
 
 SQL> select database_role from v$database;
 
+============================================================================================================================
 
-Output of above command :
+# Output of above command :
 
 [oracle@server ~]$ sqlplus / as sysdba
 
