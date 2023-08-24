@@ -59,7 +59,9 @@ Database altered.
 SQL> shutdown immediate;
 
 ORA-01109: database not open
+
 Database dismounted.
+
 ORACLE instance shut down.
 
 
