@@ -44,6 +44,7 @@ Version 19.18.0.0.0
 SQL> select database_role from v$database;
 
 DATABASE_ROLE
+
 ----------------
 PHYSICAL STANDBY
 
@@ -74,6 +75,7 @@ Database opened.
 SQL> select database_role from v$database;
 
 DATABASE_ROLE
+
 ----------------
 PRIMARY
 
