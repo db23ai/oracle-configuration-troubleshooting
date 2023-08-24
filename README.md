@@ -62,6 +62,8 @@ ORA-01109: database not open
 
 Database dismounted.
 ORACLE instance shut down.
+
+
 SQL> startup
 ORACLE instance started.
 
@@ -72,6 +74,7 @@ Database Buffers         3305111552 bytes
 Redo Buffers               34705408 bytes
 Database mounted.
 Database opened.
+
 SQL> select database_role from v$database;
 
 DATABASE_ROLE
