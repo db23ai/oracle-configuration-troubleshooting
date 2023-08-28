@@ -8,7 +8,7 @@ sqlplus / as sysdba
 
 SQL> select database_role from v$database;
 
--- Conver standby to standalong
+-- Conver standby to standalone
 
 SQL> alter database recover managed standby database finish;
 
