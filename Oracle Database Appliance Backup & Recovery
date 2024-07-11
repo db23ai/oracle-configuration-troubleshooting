@@ -9,7 +9,7 @@ odacli recover-database -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -t Latest
 
 Example :
 
-[root@scaoda9071 ~]# odacli list-databases
+[root@test ~]# odacli list-databases
 ID                                     DBName  DB Type    DB Version        CDB    Class  Edition  Shape  Storage  StatusDB       Home ID        
 ---------------------------------------- ---------- -------- -------------------- ------- -------- -------- -------- -------- --------------------------------------- 
 826788cf-16f9-4a2c-97a1-89be9cb07e38   orcl     RAC       19.20.0.0.0      true    OLTP   EE       odb4   ASM      CONFIGURED    8d044fc1-b9b2-4ebe-b6b5-d50217115933
