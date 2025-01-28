@@ -6,12 +6,13 @@ Zero Downtime Migration Software Uninstallation
         $ /u01/app/zdmhome/bin/zdmservice stop deinstall
 
 Example :
--- find zdmservice using locate command in linux
+
+# Find zdmservice using locate command in linux
 
 [zdmuser@servername ~]$ locate zdmservice 
 /u01/app/zdmhome/bin/zdmservice
 
--- Stop zdmservice
+# Stop zdmservice
 
 [zdmuser@servername ~]$ /u01/app/zdmhome/bin/zdmservice stop
 spawn /u01/app/zdmhome/mysql/server/bin/mysqladmin --defaults-file=/u01/app/zdmbase/crsdata/servername/rhp/conf/my.cnf -u root -p shutdown
@@ -46,7 +47,7 @@ Stop JWC
 Return code is 0
 zdmservice stopped successfully.
 
--- Deinstall ZDM Software
+# Deinstall ZDM Software
 
 [zdmuser@servername ~]$ /u01/app/zdmhome/bin/zdmservice stop deinstall
 ---------------------------------------
