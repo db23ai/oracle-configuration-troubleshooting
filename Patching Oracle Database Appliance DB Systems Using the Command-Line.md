@@ -2,7 +2,7 @@ Patching Oracle Database Appliance DB Systems Using the Command-Line
 
 # Oracle Database clone files are available in the repository
 
-odacli list-availablepatches
+1. odacli list-availablepatches
 
 Example :
 
@@ -17,7 +17,7 @@ ODA Release Version  Supported DB Versions     Available DB Versions     Support
 
 # Connect to the DB system, Update DCS admin
 
- /opt/oracle/dcs/bin/odacli update-dcsadmin -v 19.26.0.0.0
+2.  /opt/oracle/dcs/bin/odacli update-dcsadmin -v 19.26.0.0.0
  
  Example :
  
@@ -46,7 +46,7 @@ ID                                       Description                            
 
 # Update the DCS components
 
-/opt/oracle/dcs/bin/odacli update-dcscomponents -v 19.26.0.0.0
+3. /opt/oracle/dcs/bin/odacli update-dcscomponents -v 19.26.0.0.0
 
 Example:
 
@@ -61,3 +61,30 @@ Example:
   "updatedTime" : "February 03, 2025 05:54:44 AM CET",
   "jobType" : null
 }
+
+# Update the DCS agent
+
+4. /opt/oracle/dcs/bin/odacli update-dcsagent -v 19.26.0.0.0
+
+Example :
+
+[root@servername ~]# /opt/oracle/dcs/bin/odacli update-dcsagent -v 19.26.0.0.0
+{
+  "jobId" : "b1c84c7a-1853-49ef-8732-1a7bc0d982f2",
+  "status" : "Created",
+  "message" : "",
+  "reports" : [ ],
+  "createTimestamp" : "February 03, 2025 06:04:44 AM CET",
+  "resourceList" : [ ],
+  "description" : "DcsAgent patching to 19.26.0.0.0",
+  "updatedTime" : "February 03, 2025 06:04:44 AM CET",
+  "jobType" : null,
+  "cpsMetadata" : null
+}
+
+# Check Job Status
+
+[root@servername ~]# odacli list-jobs
+
+b1c84c7a-1853-49ef-8732-1a7bc0d982f2     DcsAgent patching to 19.26.0.0.0                                            2025-02-03 06:04:44 CET             Success         
+
