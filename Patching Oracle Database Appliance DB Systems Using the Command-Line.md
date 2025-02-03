@@ -301,3 +301,18 @@ Job details
                  Status:  Created
                 Created:  February 03, 2025 08:03:11 CET
                 Message:  Use 'odacli describe-prepatchreport -i 0bbff6ce-f331-4822-b7be-6246d2b05622' to check details of results
+
+                
+# 
+[root@servername ~]# /opt/oracle/dcs/bin/odacli update-dbhome --id b4550202-0bb2-4fee-96a4-b4373b0e24cf -v 19.26.0.0.0 -f
+{
+  "jobId" : "4990aec2-c601-4721-af2b-7d007122e2fa",
+  "status" : "Created",
+  "message" : "",
+  "reports" : [ ],
+  "createTimestamp" : "February 03, 2025 13:23:17 CET",
+  "resourceList" : [ ],
+  "description" : "DB Home Patching to 19.26.0.0.0: Home ID is b4550202-0bb2-4fee-96a4-b4373b0e24cf",
+  "updatedTime" : "February 03, 2025 13:23:17 CET",
+  "jobType" : null,
+  "cpsMetadata" : null
