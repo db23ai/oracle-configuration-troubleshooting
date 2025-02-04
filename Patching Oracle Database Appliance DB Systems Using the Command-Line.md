@@ -409,6 +409,76 @@ Job details
                 Created:  February 03, 2025 08:03:11 CET
                 Message:  Use 'odacli describe-prepatchreport -i 0bbff6ce-f331-4822-b7be-6246d2b05622' to check details of results
 
+[root@servername ~]# odacli describe-prepatchreport -i 0bbff6ce-f331-4822-b7be-6246d2b05622
+
+Patch pre-check report                                           
+------------------------------------------------------------------------
+                 Job ID:  0bbff6ce-f331-4822-b7be-6246d2b05622
+            Description:  Patch pre-checks for [DB, ORACHKDB] to 19.26.0.0: DbHome is OraDB19000_home1
+                 Status:  FAILED
+                Created:  February 3, 2025 8:03:11 AM CET
+                 Result:  One or more pre-checks failed for [ORACHK]
+
+Node Name       
+---------------
+servername-node0
+
+Pre-Check                      Status   Comments                              
+------------------------------ -------- -------------------------------------- 
+__DB__ 
+Validate DB Home ID             Success   Validated DB Home ID:                 
+                                          b4550202-0bb2-4fee-96a4-b4373b0e24cf  
+Validate patching tag           Success   Validated patching tag: 19.26.0.0.0.  
+Is system provisioned           Success   Verified system is provisioned        
+Validate minimum agent version  Success   Validated minimum agent version       
+Is GI upgraded                  Success   Validated GI is upgraded              
+Validate available space for    Success   Validated free space required under   
+db                                        /u01                                  
+Validate glogin.sql file        Success   Successfully verified glogin.sql      
+                                          won't break patching                  
+Is DB clone available           Success   Successfully validated clone file     
+                                          exists                                
+Evaluate DBHome patching with   Success   Successfully validated updating       
+RHP                                       dbhome with RHP.  and local patching  
+                                          is possible                           
+Validate command execution      Success   Validated command execution           
+
+__ORACHK__ 
+Running orachk                  Failed    ORAchk validation failed: .           
+Validate command execution      Success   Validated command execution           
+Verify Database Memory          Failed    AHF-4073: Verify Database Memory      
+Allocation                                Allocation                            
+
+Node Name       
+---------------
+servername-node1
+
+Pre-Check                      Status   Comments                              
+------------------------------ -------- -------------------------------------- 
+__DB__ 
+Validate DB Home ID             Success   Validated DB Home ID:                 
+                                          b4550202-0bb2-4fee-96a4-b4373b0e24cf  
+Validate patching tag           Success   Validated patching tag: 19.26.0.0.0.  
+Is system provisioned           Success   Verified system is provisioned        
+Validate minimum agent version  Success   Validated minimum agent version       
+Is GI upgraded                  Success   Validated GI is upgraded              
+Validate available space for    Success   Validated free space required under   
+db                                        /u01                                  
+Validate glogin.sql file        Success   Successfully verified glogin.sql      
+                                          won't break patching                  
+Is DB clone available           Success   Successfully validated clone file     
+                                          exists                                
+Evaluate DBHome patching with   Success   Successfully validated updating       
+RHP                                       dbhome with RHP.  and local patching  
+                                          is possible                           
+Validate command execution      Success   Validated command execution           
+
+__ORACHK__ 
+Running orachk                  Failed    ORAchk validation failed: .           
+Validate command execution      Success   Validated command execution           
+Verify Database Memory          Failed    AHF-4073: Verify Database Memory      
+Allocation                                Allocation  
+
                 
 10. Update DBHOME
 
