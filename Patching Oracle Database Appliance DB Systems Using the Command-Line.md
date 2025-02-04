@@ -2,7 +2,7 @@ Patching Oracle Database Appliance DB Systems Using the Command-Line
 
 1. Oracle Database clone files are available in the repository
 
-odacli list-availablepatches
+    odacli list-availablepatches
 
 Example :
 
@@ -17,9 +17,9 @@ ODA Release Version  Supported DB Versions     Available DB Versions     Support
 
 2. Connect to the DB system, Update DCS admin
 
-/opt/oracle/dcs/bin/odacli update-dcsadmin -v 19.25.0.0.0
+    /opt/oracle/dcs/bin/odacli update-dcsadmin -v 19.25.0.0.0
  
- Example :
+Example :
  
 [root@servername ~]# /opt/oracle/dcs/bin/odacli update-dcsadmin -v 19.25.0.0.0
 {
@@ -56,7 +56,7 @@ Dcs-admin upgrade                        servername             February 03, 202
 
 3. Update the DCS components
 
-/opt/oracle/dcs/bin/odacli update-dcscomponents -v 19.25.0.0.0
+    /opt/oracle/dcs/bin/odacli update-dcscomponents -v 19.25.0.0.0
 
 Example:
 
@@ -74,7 +74,7 @@ Example:
 
 4. Update the DCS agent
 
-/opt/oracle/dcs/bin/odacli update-dcsagent -v 19.25.0.0.0
+    /opt/oracle/dcs/bin/odacli update-dcsagent -v 19.25.0.0.0
 
 Example:
 
@@ -113,9 +113,8 @@ Dcs-agent upgrade  to version            servername             February 03, 202
 
 5. Patching Pre-checks
 
- /opt/oracle/dcs/bin/odacli create-prepatchreport -s -v 19.25.0.0.0
-
- Example:
+     /opt/oracle/dcs/bin/odacli create-prepatchreport -s -v 19.25.0.0.0
+Example:
 
  [root@servername ~]# odacli describe-prepatchreport -i 3b37bc7e-020e-45ad-8d86-027d106b90d5
 
@@ -245,7 +244,7 @@ Patch GI with RHP                        servername             February 03, 202
 
 6. Apply the server update
 
-/opt/oracle/dcs/bin/odacli update-server -v 19.25.0.0.0
+    /opt/oracle/dcs/bin/odacli update-server -v 19.25.0.0.0
 
 Example:
 
@@ -265,7 +264,7 @@ Example:
 
 -- Check Job Status
 
-/opt/oracle/dcs/bin/odacli describe-job -i cc007ed1-b046-409f-8f3c-3bbeda9fa52e
+    /opt/oracle/dcs/bin/odacli describe-job -i cc007ed1-b046-409f-8f3c-3bbeda9fa52e
 
 Example:
 
@@ -412,6 +411,8 @@ Job details
 
                 
 10. Update DBHOME
+
+    /opt/oracle/dcs/bin/odacli update-dbhome --id b4550202-0bb2-4fee-96a4-b4373b0e24cf -v 19.25.0.0.0 -f
     
 [root@servername ~]# /opt/oracle/dcs/bin/odacli update-dbhome --id b4550202-0bb2-4fee-96a4-b4373b0e24cf -v 19.25.0.0.0 -f
 {
@@ -425,6 +426,8 @@ Job details
   "updatedTime" : "February 03, 2025 13:23:17 CET",
   "jobType" : null,
   "cpsMetadata" : null
+
+-- Check Job Status
 
 [root@servername ~]# odacli describe-job -i 4990aec2-c601-4721-af2b-7d007122e2fa
 
