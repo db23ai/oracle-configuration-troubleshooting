@@ -5,6 +5,11 @@ alias c='clear'
 
 alias h='history'
 
+# Create Database in ODA
+
+odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t -v 23.7.0.25.01
+
+
 # Remove TDE wallet files:
 
 -- Login as Oracle user
