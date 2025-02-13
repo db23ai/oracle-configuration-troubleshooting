@@ -33,6 +33,14 @@ cd /home/oracle/swingbench/bin
 
 ./sbutil -u soe -p password$1 -cs //hostname or scan-name/pdb-servicename  -soe -parallel 64 -dup 39
 
+4. Query size of oracle schema
+
+sqlplus / as sysdba
+alter session set container=pdb1;
+col OWNER for a30
+col SCHEMA_SIZE_MB for 999999
+select owner,sum(bytes)/1024/1024/1024 schema_size_GB from dba_segments where owner='SOE' group by owner;
+
 
 
 Reference : https://www.dominicgiles.com/downloads/
