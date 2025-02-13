@@ -1,5 +1,9 @@
 Generate random sample 2TB Data for Oracle Schema
 
+-- generate 50GB of data and then use sbutil to replicate it in parallel.
+-- Run command in nohup using file in background 
+-- SQL query show different schema size due to it doesn’t include indexes which are platform dependent.
+
 1. Download latest swingbench and Java 17 and install
 
 https://www.dominicgiles.com/site_downloads/swingbenchlatest.zip
@@ -17,12 +21,17 @@ cd jdk ; yum install jdk-17.0.12_linux-x64_bin.rpm --nogpgcheck
 
 2. Generate 50gb data, It will create tablespace and schema and insert the data
 
+cd /home/oracle/swingbench/bin
+
 ./oewizard -cl -create -cs //hostname or scanname/pdb-servicename -u soe -p password$1  -scale 50  -tc 32 -dba "sys as sysdba" -dbap password$1  -ts soe
 
 
 3. Duplicate 39 set of existing schema data
 
+cd /home/oracle/swingbench/bin
+
 ./sbutil -u soe -p password$1 -cs //hostname or scan-name/pdb-servicename  -soe -parallel 64 -dup 39
+
 
 
 Reference : https://www.dominicgiles.com/downloads/
