@@ -23,3 +23,6 @@ cd jdk ; yum install jdk-17.0.12_linux-x64_bin.rpm --nogpgcheck
 3. Duplicate 39 set of existing schema data
 
 ./sbutil -u soe -p password$1 -cs //hostname or scan-name/pdb-servicename  -soe -parallel 64 -dup 39
+
+
+Reference : https://www.dominicgiles.com/downloads/
