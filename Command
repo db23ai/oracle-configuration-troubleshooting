@@ -16,6 +16,10 @@ identity_file:/home/zdmuser/.ssh/id_rsa -srcarg3 sudo_location:/usr/bin/sudo -tg
 identity_file:/home/zdmuser/.ssh/id_rsa -tgtarg3 sudo_location:/usr/bin/sudo -rsp /home/zdmuser/emma_online_physical.rsp 
 -tdekeystorepasswd -ignore PATCH_CHECK -eval
 
+-- Check Passwordless connectivity
+
+ssh -oStrictHostKeyChecking=no -i /home/zdmuser/.ssh/id_rsa oracle@orcl-ct2um1 "/usr/bin/sudo /bin/sh -c date"
+
 
 # Remove TDE wallet files:
 
