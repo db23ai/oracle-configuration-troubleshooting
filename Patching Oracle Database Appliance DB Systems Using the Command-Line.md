@@ -223,7 +223,7 @@ Validate command execution      Success   Validated command execution
 Job details                                                      
 ----------------------------------------------------------------
                      ID:  3b37bc7e-020e-45ad-8d86-027d106b90d5
-            Description:  Patch pre-checks for [OS, GI, ORACHKSERVER, SERVER] to 19.26.0.0
+            Description:  Patch pre-checks for [OS, GI, ORACHKSERVER, SERVER] to 19.25.0.0
                  Status:  Success
                 Created:  February 03, 2025 06:19:48 CET
                 Message:  Use 'odacli describe-prepatchreport -i <ID>' to check prepatch results
@@ -338,7 +338,7 @@ Reboot Node                              servername             February 03, 202
 Job details                                                      
 ----------------------------------------------------------------
                      ID:  cc007ed1-b046-409f-8f3c-3bbeda9fa52e
-            Description:  Server Patching to 19.26.0.0.0
+            Description:  Server Patching to 19.25.0.0.0
                  Status:  Success
                 Created:  February 03, 2025 06:44:53 CET
                 Message:  
