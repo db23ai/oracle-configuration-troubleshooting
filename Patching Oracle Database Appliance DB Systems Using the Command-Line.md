@@ -107,9 +107,9 @@ Job details
 Task Name                                Node Name                 Start Time                               End Time                                 Status          
 ---------------------------------------- ------------------------- ---------------------------------------- ---------------------------------------- ----------------
 Dcs-agent upgrade  to version            servername             February 03, 2025 06:04:46 CET           February 03, 2025 06:07:39 CET           Success         
-19.26.0.0.0                                                                                                                                                          
+19.25.0.0.0                                                                                                                                                          
 Dcs-agent upgrade  to version            servername             February 03, 2025 06:07:39 CET           February 03, 2025 06:10:38 CET           Success         
-19.26.0.0.0       
+19.25.0.0.0       
 
 5. Patching Pre-checks
 
@@ -414,7 +414,7 @@ Job details
 Patch pre-check report                                           
 ------------------------------------------------------------------------
                  Job ID:  0bbff6ce-f331-4822-b7be-6246d2b05622
-            Description:  Patch pre-checks for [DB, ORACHKDB] to 19.26.0.0: DbHome is OraDB19000_home1
+            Description:  Patch pre-checks for [DB, ORACHKDB] to 19.25.0.0: DbHome is OraDB19000_home1
                  Status:  FAILED
                 Created:  February 3, 2025 8:03:11 AM CET
                  Result:  One or more pre-checks failed for [ORACHK]
@@ -428,7 +428,7 @@ Pre-Check                      Status   Comments
 __DB__ 
 Validate DB Home ID             Success   Validated DB Home ID:                 
                                           b4550202-0bb2-4fee-96a4-b4373b0e24cf  
-Validate patching tag           Success   Validated patching tag: 19.26.0.0.0.  
+Validate patching tag           Success   Validated patching tag: 19.25.0.0.0.  
 Is system provisioned           Success   Verified system is provisioned        
 Validate minimum agent version  Success   Validated minimum agent version       
 Is GI upgraded                  Success   Validated GI is upgraded              
@@ -458,7 +458,7 @@ Pre-Check                      Status   Comments
 __DB__ 
 Validate DB Home ID             Success   Validated DB Home ID:                 
                                           b4550202-0bb2-4fee-96a4-b4373b0e24cf  
-Validate patching tag           Success   Validated patching tag: 19.26.0.0.0.  
+Validate patching tag           Success   Validated patching tag: 19.25.0.0.0.  
 Is system provisioned           Success   Verified system is provisioned        
 Validate minimum agent version  Success   Validated minimum agent version       
 Is GI upgraded                  Success   Validated GI is upgraded              
@@ -504,7 +504,7 @@ Allocation                                Allocation
 Job details                                                      
 ----------------------------------------------------------------
                      ID:  4990aec2-c601-4721-af2b-7d007122e2fa
-            Description:  DB Home Patching to 19.26.0.0.0: Home ID is b4550202-0bb2-4fee-96a4-b4373b0e24cf
+            Description:  DB Home Patching to 19.25.0.0.0: Home ID is b4550202-0bb2-4fee-96a4-b4373b0e24cf
                  Status:  Success
                 Created:  February 03, 2025 13:23:17 CET
                 Message:  
