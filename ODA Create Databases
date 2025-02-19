@@ -30,8 +30,12 @@ Job details
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 
+Example :
+
 [root@servername ~]# odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
 23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: emma  2025-02-19 06:12:39 CET   Success  
+
+Example :
 
 [root@servername ~]# odacli describe-database -n emma
 Database details                                                  
@@ -99,9 +103,12 @@ Job details
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 
+Example :
 
 [root@servername ~]# odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
 48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: nora    2025-02-19 06:14:26 CET             Success 
+
+Example :
 
 [root@servername ~]# odacli describe-database -n nora
 Database details                                                  
