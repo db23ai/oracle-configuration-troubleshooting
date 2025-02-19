@@ -1,5 +1,7 @@
 How to create database in Oracle Database Appliance
 
+-- Create database with ASM Storage
+
 [root@servername ~]# odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
 Retype SYS, SYSTEM and PDB Admin user password: 
@@ -17,7 +19,46 @@ Job details
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 
+[root@servername ~]# odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
+23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: emma  2025-02-19 06:12:39 CET   Success  
 
+[root@servername ~]# odacli describe-database -n emma
+Database details                                                  
+---------------------------------------------------------------- 
+                     ID: 166c3d31-2606-4194-9f53-468affc641dd
+            Description: emma
+                DB Name: emma
+             DB Version: 19.25.0.0.241021
+                DB Type: RAC
+                DB Role: PRIMARY
+    DB Target Node Name: 
+             DB Edition: EE
+                   DBID: 1554687582
+ Instance Only Database: false
+                    CDB: true
+               PDB Name: pdb1
+    PDB Admin User Name: pdbadmin
+      High Availability: false
+                  Class: OLTP
+                  Shape: odb1
+                Storage: ASM
+          DB Redundancy: MIRROR
+           CharacterSet: AL32UTF8
+  National CharacterSet: AL16UTF16
+               Language: AMERICAN
+              Territory: AMERICA
+                Home ID: e92a72b6-f8b5-4d89-b939-5e2150b4db45
+        Console Enabled: false
+  TDE Wallet Management: ODA
+            TDE Enabled: true
+     Level 0 Backup Day: sunday
+     AutoBackup Enabled: false
+                Created: February 19, 2025 6:12:39 AM CET
+         DB Domain Name: us.oracle.com
+    Associated Networks: Public-network 
+          CPU Pool Name: 
+
+-- Create database with ACFS Storage
 
 [root@servername ~]# odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
@@ -36,3 +77,42 @@ Job details
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 
+
+[root@servername ~]# odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
+48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: nora    2025-02-19 06:14:26 CET             Success 
+
+[root@servername ~]# odacli describe-database -n nora
+Database details                                                  
+---------------------------------------------------------------- 
+                     ID: 40dd4ea6-fa01-4bc3-b1df-2abd3f4dcce9
+            Description: nora
+                DB Name: nora
+             DB Version: 19.26.0.0.241021
+                DB Type: RAC
+                DB Role: PRIMARY
+    DB Target Node Name: 
+             DB Edition: EE
+                   DBID: 2788959726
+ Instance Only Database: false
+                    CDB: true
+               PDB Name: pdb1
+    PDB Admin User Name: pdbadmin
+      High Availability: false
+                  Class: OLTP
+                  Shape: odb1
+                Storage: ACFS
+          DB Redundancy: MIRROR
+           CharacterSet: AL32UTF8
+  National CharacterSet: AL16UTF16
+               Language: AMERICAN
+              Territory: AMERICA
+                Home ID: 0efc6dfe-6ffc-435f-bfb8-75acdc739b0b
+        Console Enabled: false
+  TDE Wallet Management: ODA
+            TDE Enabled: true
+     Level 0 Backup Day: sunday
+     AutoBackup Enabled: false
+                Created: February 19, 2025 6:14:26 AM CET
+         DB Domain Name: us.oracle.com
+    Associated Networks: Public-network 
+          CPU Pool Name: 
