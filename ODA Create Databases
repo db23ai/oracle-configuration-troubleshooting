@@ -1,6 +1,17 @@
 How to create database in Oracle Database Appliance
 
--- Create database with ASM Storage
+1. Create database with ASM Storage
+
+-- create database using asm storage
+odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
+
+-- Check database status
+odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
+
+-- Describe database & verify parameter values
+odacli describe-database -n emma
+
+Example :
 
 [root@servername ~]# odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
@@ -58,7 +69,18 @@ Database details
     Associated Networks: Public-network 
           CPU Pool Name: 
 
--- Create database with ACFS Storage
+2. Create database with ACFS Storage
+
+-- create database using asm storage
+odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
+
+-- Check database status
+odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
+
+-- Describe database & verify parameter values
+odacli describe-database -n nora
+
+Example:
 
 [root@servername ~]# odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
@@ -116,3 +138,5 @@ Database details
          DB Domain Name: us.oracle.com
     Associated Networks: Public-network 
           CPU Pool Name: 
+
+Reference : https://docs.oracle.com/en/engineered-systems/oracle-database-appliance/19.25/daten/managing-databases-oda.html#GUID-12032DE8-79AC-4FA3-906E-061ABF7FB0A0
