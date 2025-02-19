@@ -9,7 +9,7 @@ odacli recover-database -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -t Latest
 
 Example :
 
-[root@test ~]# odacli list-databases
+[root@servername ~]# odacli list-databases
 ID                                     DBName  DB Type    DB Version        CDB    Class  Edition  Shape  Storage  StatusDB       Home ID        
 ---------------------------------------- ---------- -------- -------------------- ------- -------- -------- -------- -------- --------------------------------------- 
 826788cf-16f9-4a2c-97a1-89be9cb07e38   orcl     RAC       19.20.0.0.0      true    OLTP   EE       odb4   ASM      CONFIGURED    8d044fc1-b9b2-4ebe-b6b5-d50217115933
@@ -51,10 +51,9 @@ ID                                     DBName  DB Type    DB Version        CDB 
   "updatedTime" : "June 27, 2024 09:07:31 AM CEST",
   "jobType" : null
 }
-[root@test ~]#
 
 
-[root@test ~]# odacli create-backup -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -bt Regular-L0 -t 2024JUNE27
+[root@servername ~]# odacli create-backup -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -bt Regular-L0 -t 2024JUNE27
 {
   "jobId" : "4b16173c-2734-406c-8168-4f29b01b318d",
   "status" : "Created",
@@ -68,7 +67,7 @@ ID                                     DBName  DB Type    DB Version        CDB 
 }
 
 
-[root@test ~]# odacli recover-database -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -t Latest
+[root@servername ~]# odacli recover-database -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -t Latest
 {
   "jobId" : "20c575a8-dfbf-4c56-9b2b-a14271295e3b",
   "status" : "Created",
@@ -81,7 +80,7 @@ ID                                     DBName  DB Type    DB Version        CDB 
   "jobType" : null
 }
 
-[root@test ~]# odacli list-jobs
+[root@servername ~]# odacli list-jobs
 
 d0565230-443a-47f8-9b4a-cb1f3f8e36ab     Create Backup Config: dailybackup                                2024-06-27 09:07:08 CEST           Success
 e0a88f43-6d4b-4876-825f-d8f8913204bb     Modify database: orcl                                           2024-06-27 09:07:31 CEST            Success
