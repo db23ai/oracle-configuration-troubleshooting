@@ -1,18 +1,17 @@
 Zero Downtime Migration Software Uninstallation
+
+
 1. Connect as user with which you want to install the ZDM software on the Linux host
-2. Stop the Zero Downtime Migration service
-        $ /u01/app/zdmhome/bin/zdmservice stop
-3. Run the following command to uninstall the software.
-        $ /u01/app/zdmhome/bin/zdmservice stop deinstall
 
-Example :
-
-# Find zdmservice using locate command in linux
+-- Find zdmservice using locate command in linux
 
 [zdmuser@servername ~]$ locate zdmservice 
 /u01/app/zdmhome/bin/zdmservice
 
-# Stop zdmservice
+2. Stop the Zero Downtime Migration service
+        $ /u01/app/zdmhome/bin/zdmservice stop
+
+Example :
 
 [zdmuser@servername ~]$ /u01/app/zdmhome/bin/zdmservice stop
 spawn /u01/app/zdmhome/mysql/server/bin/mysqladmin --defaults-file=/u01/app/zdmbase/crsdata/servername/rhp/conf/my.cnf -u root -p shutdown
@@ -47,7 +46,10 @@ Stop JWC
 Return code is 0
 zdmservice stopped successfully.
 
-# Deinstall ZDM Software
+3. Run the following command to uninstall the software.
+        $ /u01/app/zdmhome/bin/zdmservice stop deinstall
+
+Example:
 
 [zdmuser@servername ~]$ /u01/app/zdmhome/bin/zdmservice stop deinstall
 ---------------------------------------
@@ -69,7 +71,7 @@ Deleting oracle base folder
 Deleting oracle home folder
 Deinstall finished successfully
 
-Reference : 	[ZDM]: How To Install And Uninstall Zero Downtime Migration (ZDM) Software (Doc ID 2630479.1)
+Reference :   [ZDM]: How To Install And Uninstall Zero Downtime Migration (ZDM) Software (Doc ID 2630479.1)
 URL       :   https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=174163713347905&parent=EXTERNAL_SEARCH&sourceId=BULLETIN&id=2630479.1&_afrWindowMode=0&_adf.ctrl-state=hsepr28ce_4
               
 
