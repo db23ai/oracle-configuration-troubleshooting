@@ -1,0 +1,38 @@
+How to create database in Oracle Database Appliance
+
+[root@servername ~]# odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
+Enter SYS, SYSTEM and PDB Admin user password: 
+Retype SYS, SYSTEM and PDB Admin user password: 
+Enter TDE wallet password: 
+Retype TDE wallet password: 
+
+Job details                                                      
+----------------------------------------------------------------
+                     ID:  23b281d3-5688-44e2-8628-6f8404347c2a
+            Description:  Database service creation with DB name: emma
+                 Status:  Created
+                Created:  February 19, 2025 06:12:39 CET
+                Message:  
+
+Task Name                                Start Time                               End Time                                 Status          
+---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
+
+
+
+[root@servername ~]# odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
+Enter SYS, SYSTEM and PDB Admin user password: 
+Retype SYS, SYSTEM and PDB Admin user password: 
+Enter TDE wallet password: 
+Retype TDE wallet password: 
+
+Job details                                                      
+----------------------------------------------------------------
+                     ID:  48d07e45-0c38-4ba4-8164-5572d5145f90
+            Description:  Database service creation with DB name: nora
+                 Status:  Created
+                Created:  February 19, 2025 06:14:26 CET
+                Message:  
+
+Task Name                                Start Time                               End Time                                 Status          
+---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
+
