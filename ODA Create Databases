@@ -87,7 +87,7 @@ Database details
                      ID: 40dd4ea6-fa01-4bc3-b1df-2abd3f4dcce9
             Description: nora
                 DB Name: nora
-             DB Version: 19.26.0.0.241021
+             DB Version: 19.25.0.0.241021
                 DB Type: RAC
                 DB Role: PRIMARY
     DB Target Node Name: 
