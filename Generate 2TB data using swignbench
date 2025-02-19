@@ -5,7 +5,7 @@ Generate random sample 2TB Data for Oracle Schema
    Example : nohup filename.sh &
 -- SQL query show different schema size due to it doesn’t include indexes which are platform dependent.
 
-1. Download latest swingbench and Java 17 and install
+1. Download and install latest swingbench and Java 17 
 
 https://www.dominicgiles.com/site_downloads/swingbenchlatest.zip
 https://www.dominicgiles.com/site_downloads/swingbench04112023_jdk11.zip
