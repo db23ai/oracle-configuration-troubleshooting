@@ -34,3 +34,15 @@ ssh -oStrictHostKeyChecking=no -i /home/zdmuser/.ssh/id_rsa oracle@orcl-ct2um1 "
 
 /u01/app/oracle/product/23.0.0.0/dbhome_2/bin/asmcmd kscopy --local /u01/app/oracle/zdm/zdm_dbsys_tgt_3/zdm/TDE/ewallet.p12 +DATA/DBSYS_TGT/tde/
 /u01/app/oracle/product/23.0.0.0/dbhome_2/bin/asmcmd kscopy --local /u01/app/oracle/zdm/zdm_dbsys_tgt_3/zdm/TDE/cwallet.sso +DATA/DBSYS_TGT/tde/
+
+# Resize the ACFS filesystem to 100 GB:
+Reference - How To Resize An ACFS Filesystem/ASM Volume (ADVM) (Doc ID 1173978.1)
+
+[root@servername ~]# df -h
+Filesystem                             Size  Used Avail Use% Mounted on
+/dev/md648p6                           488M  199M  254M  44% /boot
+/dev/mapper/VolGroupSys-LogVolOpt       30G   16G   13G  56% /opt
+/dev/mapper/VolGroupSys-LogVolU01       40G   14G   24G  38% /u01
+/dev/asm/acfsclone-445                 150G  113G   38G  76% /opt/oracle/dbhome1
+
+[grid@servername ~]$ /sbin/acfsutil size 200G /dev/asm/acfsclone-445
