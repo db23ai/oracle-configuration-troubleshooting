@@ -1,4 +1,4 @@
-# How to Convert Standby to Standalone Database
+# How to Convert Standby to Standalone Databases
 
 # 1. Check current role of database
 
