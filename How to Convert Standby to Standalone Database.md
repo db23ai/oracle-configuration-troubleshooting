@@ -1,6 +1,6 @@
-How to Convert Standby to Standalone Database
+# How to Convert Standby to Standalone Database
 
-1. Check current role of database
+# 1. Check current role of database
 
 -- Login as SYS user
 
@@ -25,7 +25,7 @@ DATABASE_ROLE
 
 PHYSICAL STANDBY
 
-2 Conver standby to standalone
+# 2 Conver standby to standalone
 
 alter database recover managed standby database finish;
 
@@ -43,7 +43,7 @@ SQL> alter database commit to switchover to primary with session shutdown;
 
 Database altered.
 
-3. Shutdown Database
+# 3. Shutdown Database
 
 shutdown immediate;
 
@@ -55,7 +55,7 @@ Database dismounted.
 
 ORACLE instance shut down.
 
-4. Start Database
+# 4. Start Database
 
 startup
 
@@ -79,7 +79,7 @@ Database mounted.
 
 Database opened.
 
-5. Check current role of database
+# 5. Check current role of database
 
 select database_role from v$database;
 
