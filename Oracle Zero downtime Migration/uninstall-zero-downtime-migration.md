@@ -1,4 +1,4 @@
-# Zero Downtime Migration Software Uninstallation Guide
+# Zero Downtime Migration (ZDM) Software Uninstallation Guide
 
 ## Step-by-Step Instructions
 
