@@ -5,7 +5,7 @@
 ### Step 1: Create database using ASM storage
 
 ```bash
-odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
+odacli create-database -n orcl -s odb1 -p pdb1 -r asm -c -y RAC -u orcl_src -t
 ```
 
 ### Step 2: Check database status
@@ -17,13 +17,13 @@ odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
 ### Step 3: Describe database & verify parameter values
 
 ```bash
-odacli describe-database -n emma
+odacli describe-database -n orcl
 ```
 
 ### Example:
 
 ```bash
-[root@servername ~]# odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
+[root@servername ~]# odacli create-database -n orcl -s odb1 -p pdb1 -r asm -c -y RAC -u orcl_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
 Retype SYS, SYSTEM and PDB Admin user password: 
 Enter TDE wallet password: 
@@ -32,7 +32,7 @@ Retype TDE wallet password:
 Job details                                                      
 ----------------------------------------------------------------
                      ID:  23b281d3-5688-44e2-8628-6f8404347c2a
-            Description:  Database service creation with DB name: emma
+            Description:  Database service creation with DB name: orcl
                  Status:  Created
                 Created:  February 19, 2025 06:12:39 CET
                 Message:  
@@ -45,18 +45,18 @@ Task Name                                Start Time                             
 
 ```bash
 [root@servername ~]# odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
-23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: emma  2025-02-19 06:12:39 CET   Success  
+23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: orcl  2025-02-19 06:12:39 CET   Success  
 ```
 
 ### Example:
 
 ```bash
-[root@servername ~]# odacli describe-database -n emma
+[root@servername ~]# odacli describe-database -n orcl
 Database details                                                  
 ---------------------------------------------------------------- 
                      ID: 166c3d31-2606-4194-9f53-468affc641dd
-            Description: emma
-                DB Name: emma
+            Description: orcl
+                DB Name: orcl
              DB Version: 19.25.0.0.241021
                 DB Type: RAC
                 DB Role: PRIMARY
@@ -93,7 +93,7 @@ Database details
 ### Step 1: Create database using ACFS storage
 
 ```bash
-odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
+odacli create-database -n ora19c -s odb1 -p pdb1 -r acfs -c -y RAC -u ora19c_src -t
 ```
 
 ### Step 2: Check database status
@@ -105,13 +105,13 @@ odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
 ### Step 3: Describe database & verify parameter values
 
 ```bash
-odacli describe-database -n nora
+odacli describe-database -n ora19c
 ```
 
 ### Example:
 
 ```bash
-[root@servername ~]# odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
+[root@servername ~]# odacli create-database -n ora19c -s odb1 -p pdb1 -r acfs -c -y RAC -u ora19c_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
 Retype SYS, SYSTEM and PDB Admin user password: 
 Enter TDE wallet password: 
@@ -120,7 +120,7 @@ Retype TDE wallet password:
 Job details                                                      
 ----------------------------------------------------------------
                      ID:  48d07e45-0c38-4ba4-8164-5572d5145f90
-            Description:  Database service creation with DB name: nora
+            Description:  Database service creation with DB name: ora19c
                  Status:  Created
                 Created:  February 19, 2025 06:14:26 CET
                 Message:  
@@ -133,18 +133,18 @@ Task Name                                Start Time                             
 
 ```bash
 [root@servername ~]# odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
-48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: nora    2025-02-19 06:14:26 CET             Success 
+48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: ora19c    2025-02-19 06:14:26 CET             Success 
 ```
 
 ### Example:
 
 ```bash
-[root@servername ~]# odacli describe-database -n nora
+[root@servername ~]# odacli describe-database -n ora19c
 Database details                                                  
 ---------------------------------------------------------------- 
                      ID: 40dd4ea6-fa01-4bc3-b1df-2abd3f4dcce9
-            Description: nora
-                DB Name: nora
+            Description: ora19c
+                DB Name: ora19c
              DB Version: 19.25.0.0.241021
                 DB Type: RAC
                 DB Role: PRIMARY
