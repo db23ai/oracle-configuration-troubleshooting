@@ -232,7 +232,16 @@ ID:  4990aec2-c601-4721-af2b-7d007122e2fa
 Description:  DB Home Patching to 19.25.0.0.0: Home ID is b4550202-0bb2-4fee-96a4-b4373b0e24cf
 Status:  Success
 Created:  February 03, 2025 13:23:17 CET
-Message:  
+Message:
+Task Name                                Node Name                 Start Time                               End Time                                 Status          
+---------------------------------------- ------------------------- ---------------------------------------- ---------------------------------------- ----------------
+Creating wallet for DB Client            servername             February 03, 2025 13:24:16 CET           February 03, 2025 13:24:17 CET           Success         
+Patch databases by RHP - [dbsys]         servername             February 03, 2025 13:24:17 CET           February 03, 2025 13:36:24 CET           Success         
+Updating database metadata               servername             February 03, 2025 13:36:25 CET           February 03, 2025 13:36:25 CET           Success         
+Set log_archive_dest for Database        servername             February 03, 2025 13:36:25 CET           February 03, 2025 13:36:29 CET           Success         
+Generating and saving BOM                servername             February 03, 2025 13:36:31 CET           February 03, 2025 13:37:14 CET           Success         
+Generating and saving BOM                servername             February 03, 2025 13:36:31 CET           February 03, 2025 13:37:16 CET           Success         
+TDE parameter update                     servername             February 03, 2025 13:37:50 CET           February 03, 2025 13:37:50 CET           Success       
 ```
 
 
