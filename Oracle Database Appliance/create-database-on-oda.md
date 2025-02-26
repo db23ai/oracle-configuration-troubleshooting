@@ -7,19 +7,6 @@
 ```bash
 odacli create-database -n orcl -s odb1 -p pdb1 -r asm -c -y RAC -u orcl_src -t
 ```
-
-### Step 2: Check database status
-
-```bash
-odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
-```
-
-### Step 3: Describe database & verify parameter values
-
-```bash
-odacli describe-database -n orcl
-```
-
 ### Example:
 
 ```bash
@@ -41,6 +28,11 @@ Task Name                                Start Time                             
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 ```
 
+### Step 2: Check database status
+
+```bash
+odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
+```
 ### Example:
 
 ```bash
@@ -48,6 +40,11 @@ Task Name                                Start Time                             
 23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: orcl  2025-02-19 06:12:39 CET   Success  
 ```
 
+### Step 3: Describe database & verify parameter values
+
+```bash
+odacli describe-database -n orcl
+```
 ### Example:
 
 ```bash
@@ -95,19 +92,6 @@ Database details
 ```bash
 odacli create-database -n ora19c -s odb1 -p pdb1 -r acfs -c -y RAC -u ora19c_src -t
 ```
-
-### Step 2: Check database status
-
-```bash
-odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
-```
-
-### Step 3: Describe database & verify parameter values
-
-```bash
-odacli describe-database -n ora19c
-```
-
 ### Example:
 
 ```bash
@@ -129,6 +113,11 @@ Task Name                                Start Time                             
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 ```
 
+### Step 2: Check database status
+
+```bash
+odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
+```
 ### Example:
 
 ```bash
@@ -136,6 +125,11 @@ Task Name                                Start Time                             
 48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: ora19c    2025-02-19 06:14:26 CET             Success 
 ```
 
+### Step 3: Describe database & verify parameter values
+
+```bash
+odacli describe-database -n ora19c
+```
 ### Example:
 
 ```bash
