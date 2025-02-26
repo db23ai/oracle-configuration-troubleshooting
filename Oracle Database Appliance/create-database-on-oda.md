@@ -1,17 +1,18 @@
-How to create database in Oracle Database Appliance 
+Creating a Database in Oracle Database Appliance
+1. Create Database with ASM Storage
+Step 1: Create database using ASM storage
 
-1. Create database with ASM Storage
-
--- create database using asm storage
 odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
 
--- Check database status
+Step 2: Check database status
+
 odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
 
--- Describe database & verify parameter values
+Step 3: Describe database & verify parameter values
+
 odacli describe-database -n emma
 
-Example :
+Example:
 
 [root@servername ~]# odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
@@ -30,12 +31,12 @@ Job details
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 
-Example :
+Example:
 
 [root@servername ~]# odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
 23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: emma  2025-02-19 06:12:39 CET   Success  
 
-Example :
+Example:
 
 [root@servername ~]# odacli describe-database -n emma
 Database details                                                  
@@ -73,15 +74,17 @@ Database details
     Associated Networks: Public-network 
           CPU Pool Name: 
 
-2. Create database with ACFS Storage
+2. Create Database with ACFS Storage
+Step 1: Create database using ACFS storage
 
--- create database using asm storage
 odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
 
--- Check database status
+Step 2: Check database status
+
 odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
 
--- Describe database & verify parameter values
+Step 3: Describe database & verify parameter values
+
 odacli describe-database -n nora
 
 Example:
@@ -103,12 +106,12 @@ Job details
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
 
-Example :
+Example:
 
 [root@servername ~]# odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
 48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: nora    2025-02-19 06:14:26 CET             Success 
 
-Example :
+Example:
 
 [root@servername ~]# odacli describe-database -n nora
 Database details                                                  
@@ -146,4 +149,3 @@ Database details
     Associated Networks: Public-network 
           CPU Pool Name: 
 
-Reference : https://docs.oracle.com/en/engineered-systems/oracle-database-appliance/19.25/daten/managing-databases-oda.html#GUID-12032DE8-79AC-4FA3-906E-061ABF7FB0A0
