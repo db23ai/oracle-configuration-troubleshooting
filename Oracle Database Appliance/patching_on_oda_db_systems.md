@@ -1,4 +1,4 @@
-# Patching Oracle Database Appliance DB Systems Using the Command-Line
+# Patching Oracle Database Appliance DB Systems via Command-Line
 
 ## Prerequisites
 - Oracle Database clone files must be available in the repository.
