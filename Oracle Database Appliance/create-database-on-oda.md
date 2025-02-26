@@ -1,19 +1,28 @@
-Creating a Database in Oracle Database Appliance
-1. Create Database with ASM Storage
-Step 1: Create database using ASM storage
+# Creating a Database in Oracle Database Appliance
 
+## 1. Create Database with ASM Storage
+
+### Step 1: Create database using ASM storage
+
+```bash
 odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
+```
 
-Step 2: Check database status
+### Step 2: Check database status
 
+```bash
 odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
+```
 
-Step 3: Describe database & verify parameter values
+### Step 3: Describe database & verify parameter values
 
+```bash
 odacli describe-database -n emma
+```
 
-Example:
+### Example:
 
+```bash
 [root@servername ~]# odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
 Retype SYS, SYSTEM and PDB Admin user password: 
@@ -30,14 +39,18 @@ Job details
 
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
+```
 
-Example:
+### Example:
 
+```bash
 [root@servername ~]# odacli list-jobs | grep -i 23b281d3-5688-44e2-8628-6f8404347c2a
 23b281d3-5688-44e2-8628-6f8404347c2a     Database service creation with DB name: emma  2025-02-19 06:12:39 CET   Success  
+```
 
-Example:
+### Example:
 
+```bash
 [root@servername ~]# odacli describe-database -n emma
 Database details                                                  
 ---------------------------------------------------------------- 
@@ -73,22 +86,31 @@ Database details
          DB Domain Name: us.oracle.com
     Associated Networks: Public-network 
           CPU Pool Name: 
+```
 
-2. Create Database with ACFS Storage
-Step 1: Create database using ACFS storage
+## 2. Create Database with ACFS Storage
 
+### Step 1: Create database using ACFS storage
+
+```bash
 odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
+```
 
-Step 2: Check database status
+### Step 2: Check database status
 
+```bash
 odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
+```
 
-Step 3: Describe database & verify parameter values
+### Step 3: Describe database & verify parameter values
 
+```bash
 odacli describe-database -n nora
+```
 
-Example:
+### Example:
 
+```bash
 [root@servername ~]# odacli create-database -n nora -s odb1 -p pdb1 -r acfs -c -y RAC -u nora_src -t
 Enter SYS, SYSTEM and PDB Admin user password: 
 Retype SYS, SYSTEM and PDB Admin user password: 
@@ -105,14 +127,18 @@ Job details
 
 Task Name                                Start Time                               End Time                                 Status          
 ---------------------------------------- ---------------------------------------- ---------------------------------------- ----------------
+```
 
-Example:
+### Example:
 
+```bash
 [root@servername ~]# odacli list-jobs | grep -i 48d07e45-0c38-4ba4-8164-5572d5145f90
 48d07e45-0c38-4ba4-8164-5572d5145f90     Database service creation with DB name: nora    2025-02-19 06:14:26 CET             Success 
+```
 
-Example:
+### Example:
 
+```bash
 [root@servername ~]# odacli describe-database -n nora
 Database details                                                  
 ---------------------------------------------------------------- 
@@ -148,4 +174,4 @@ Database details
          DB Domain Name: us.oracle.com
     Associated Networks: Public-network 
           CPU Pool Name: 
-
+```
