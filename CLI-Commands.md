@@ -21,16 +21,16 @@
 
 ### Create Database in ODA
 
-Create a new database named `emma` with specific configurations:
+Create a new database named `orcl` with specific configurations:
 ```bash
-odacli create-database -n emma -s odb1 -p pdb1 -r asm -c -y RAC -u emma_src -t -v 23.7.0.25.01
+odacli create-database -n orcl -s odb1 -p pdb1 -r asm -c -y RAC -u orcl_src -t -v 23.7.0.25.01
 ```
 
 ### ZDM Online Physical Migration
 
 Perform an online physical migration of the database using `zdmcli`:
 ```bash
-zdmcli migrate database -sourcedb emma_src -sourcenode servername -targetnode servername -srcauth zdmauth -srcarg1 user:oracle -srcarg2 identity_file:/home/zdmuser/.ssh/id_rsa -srcarg3 sudo_location:/usr/bin/sudo -tgtauth zdmauth -tgtarg1 user:oracle -tgtarg2 identity_file:/home/zdmuser/.ssh/id_rsa -tgtarg3 sudo_location:/usr/bin/sudo -rsp /home/zdmuser/emma_online_physical.rsp -tdekeystorepasswd -ignore PATCH_CHECK -eval
+zdmcli migrate database -sourcedb orcl_src -sourcenode servername -targetnode servername -srcauth zdmauth -srcarg1 user:oracle -srcarg2 identity_file:/home/zdmuser/.ssh/id_rsa -srcarg3 sudo_location:/usr/bin/sudo -tgtauth zdmauth -tgtarg1 user:oracle -tgtarg2 identity_file:/home/zdmuser/.ssh/id_rsa -tgtarg3 sudo_location:/usr/bin/sudo -rsp /home/zdmuser/orcl_online_physical.rsp -tdekeystorepasswd -ignore PATCH_CHECK -eval
 ```
 
 ### Check Passwordless Connectivity
