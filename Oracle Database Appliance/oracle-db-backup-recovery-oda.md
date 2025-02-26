@@ -1,19 +1,42 @@
 Oracle Database Appliance Backup & Recovery
 
--- Steps to take backup & Recovery
+This guide provides the steps to perform backup and recovery operations on Oracle Database Appliance using the odacli command-line tool.
+Steps to Take Backup & Recovery
+1. Create Backup Configuration
+
+Create a backup configuration with the name dailybackup and set it to run every day (-w 1).
 
 odacli create-backupconfig -d Disk -n dailybackup -w 1
+
+2. Modify Database to Use Backup Configuration
+
+Modify the database orcl to use the backup configuration dailybackup.
+
 odacli modify-database -n orcl -bin dailybackup
+
+3. Create Backup
+
+Create a Level 0 (full) backup for the database orcl with the tag 2024JUNE27.
+
 odacli create-backup -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -bt Regular-L0 -t 2024JUNE27
+
+4. Recover Database
+
+Recover the database orcl to the latest backup.
+
 odacli recover-database -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -t Latest
 
-Example :
+Example
+
+Below is an example of the commands as executed on a server.
+List Databases
 
 [root@servername ~]# odacli list-databases
 ID                                     DBName  DB Type    DB Version        CDB    Class  Edition  Shape  Storage  StatusDB       Home ID        
 ---------------------------------------- ---------- -------- -------------------- ------- -------- -------- -------- -------- --------------------------------------- 
 826788cf-16f9-4a2c-97a1-89be9cb07e38   orcl     RAC       19.20.0.0.0      true    OLTP   EE       odb4   ASM      CONFIGURED    8d044fc1-b9b2-4ebe-b6b5-d50217115933
 
+Create Backup Configuration
 
 [root@test ~]# odacli create-backupconfig -d Disk -n dailybackup -w 1
 {
@@ -33,6 +56,9 @@ ID                                     DBName  DB Type    DB Version        CDB 
   "updatedTime" : "June 27, 2024 09:07:08 AM CEST",
   "jobType" : null
 }
+
+Modify Database
+
 [root@test ~]# odacli modify-database -n orcl -bin dailybackup
 {
   "jobId" : "e0a88f43-6d4b-4876-825f-d8f8913204bb",
@@ -52,6 +78,7 @@ ID                                     DBName  DB Type    DB Version        CDB 
   "jobType" : null
 }
 
+Create Backup
 
 [root@servername ~]# odacli create-backup -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -bt Regular-L0 -t 2024JUNE27
 {
@@ -66,6 +93,7 @@ ID                                     DBName  DB Type    DB Version        CDB 
   "jobType" : null
 }
 
+Recover Database
 
 [root@servername ~]# odacli recover-database -i 826788cf-16f9-4a2c-97a1-89be9cb07e38 -t Latest
 {
@@ -80,9 +108,12 @@ ID                                     DBName  DB Type    DB Version        CDB 
   "jobType" : null
 }
 
+List Jobs
+
 [root@servername ~]# odacli list-jobs
 
 d0565230-443a-47f8-9b4a-cb1f3f8e36ab     Create Backup Config: dailybackup                                2024-06-27 09:07:08 CEST           Success
 e0a88f43-6d4b-4876-825f-d8f8913204bb     Modify database: orcl                                           2024-06-27 09:07:31 CEST            Success
 4b16173c-2734-406c-8168-4f29b01b318d     Create Regular-L0 Backup[TAG:2024JUNE27][Db:orcl][FRA]          2024-06-27 09:10:56 CEST            Success
 20c575a8-dfbf-4c56-9b2b-a14271295e3b     Create recovery-latest for DB : orcl                            2024-06-27 09:15:17 CEST            Success
+
