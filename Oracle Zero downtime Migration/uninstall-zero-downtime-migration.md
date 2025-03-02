@@ -23,7 +23,7 @@ Run the following command to stop the ZDM service:
 [zdmuser@servername ~]$ /u01/app/zdmhome/bin/zdmservice stop
 ```
 
-#### Example Output
+#### Example:
 
 ```plaintext
 spawn /u01/app/zdmhome/mysql/server/bin/mysqladmin --defaults-file=/u01/app/zdmbase/crsdata/servername/rhp/conf/my.cnf -u root -p shutdown
@@ -67,7 +67,7 @@ Run the following command to uninstall the software:
 [zdmuser@servername ~]$ /u01/app/zdmhome/bin/zdmservice stop deinstall
 ```
 
-#### Example Output
+#### Example:
 
 ```plaintext
 ---------------------------------------
