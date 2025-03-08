@@ -89,3 +89,9 @@ a6f14053-5403-4bac-a78b-f0aae8c5e28d     CPU Pool kvmtest creation              
 ```sh
 scp testuser@100.10.10.10:/scratch/software/oraclelinux8.7/V1032420-01.iso /tmp/V1032420-01.iso
 ```
+
+## 6. Create KVM
+
+```sh
+odacli create-vm -n ocpvm -vc 4 -m 16G -vms kvmvmstorage -vd kvmdisk -s 100G -cp kvmcpu -vn pubnet -src /tmp/V1009690-01.iso --graphics vnc,listen=0.0.0.0
+```
