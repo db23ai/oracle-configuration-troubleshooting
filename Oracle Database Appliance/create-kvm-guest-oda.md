@@ -26,18 +26,18 @@ Task Name                                Start Time                             
 ## 2. Create VM Storage
 
 ```sh
-odacli create-vmstorage -n kvmvmstorage -s 400G -dg DATA
+odacli create-vmstorage -n kvmstorage -s 400G -dg DATA
 ```
 
 ### Example
 
 ```sh
-[root@servername ~]# odacli create-vmstorage -n kvmvmstorage -s 400G -dg DATA
+[root@servername ~]# odacli create-vmstorage -n kvmstorage -s 400G -dg DATA
 
 Job details                                                      
 ----------------------------------------------------------------
                      ID:  9af3b798-7ece-4f76-b5a1-93e015aae14d
-            Description:  VM storage kvmvmstorage creation
+            Description:  VM storage kvmstorage creation
                  Status:  Created
                 Created:  February 19, 2025 17:59:08 CET
                 Message:  
@@ -93,5 +93,5 @@ scp testuser@100.10.10.10:/scratch/software/oraclelinux8.7/V1032420-01.iso /tmp/
 ## 6. Create KVM
 
 ```sh
-odacli create-vm -n ocpvm -vc 4 -m 16G -vms kvmvmstorage -vd kvmdisk -s 100G -cp kvmcpu -vn pubnet -src /tmp/V1009690-01.iso --graphics vnc,listen=0.0.0.0
+odacli create-vm -n ocpvm -vc 4 -m 16G -vms kvmstorage -vd kvmdisk -s 100G -cp kvmcpu -vn pubnet -src /tmp/V1009690-01.iso --graphics vnc,listen=0.0.0.0
 ```
